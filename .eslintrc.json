@@ -1,0 +1,76 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks",
+        "prettier",
+        "eslint-plugin-import-helpers",
+        "import"
+    ],
+    "rules": {
+        "react/function-component-definition": "off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+        "import/prefer-default-export": "off",
+        "prettier/prettier": "error",
+        "react/prop-types": "off",
+        "react/jsx-props-no-spreading": "off",
+        "@typescript-eslint/ban-types": "off",
+        "no-use-before-define": "off",
+        "no-param-reassign": "off",
+        "camelcase": "off",
+        "no-alert": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-nested-ternary": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "ts": "never",
+              "tsx": "never"
+            }
+        ],
+        "react/require-default-props": "off",
+        "import/no-duplicates": ["error", { "considerQueryString": true }],
+        "import-helpers/order-imports": [
+            "warn",
+            {
+              "newlinesBetween": "always",
+              "groups": [
+                ["/^next/"],
+                ["/^react/"],
+                ["module"],
+                ["/^~//"],
+                ["parent", "sibling", "index"]
+              ],
+              "alphabetize": { "order": "asc", "ignoreCase": false }
+            }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+          "typescript": {}
+        }
+    }
+}
