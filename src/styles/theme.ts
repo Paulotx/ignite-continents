@@ -3,6 +3,7 @@ import { extendTheme, Theme } from '@chakra-ui/react';
 export const theme = extendTheme({
   colors: {
     gray: {
+      '400': '#999999',
       '500': '#47585B',
     },
     yellow: {

@@ -1,6 +1,10 @@
 import { Box, useBreakpointValue } from '@chakra-ui/react';
 
-export const Banner = () => {
+interface BannerProps {
+  bgImage: string;
+}
+
+export const Banner = ({ bgImage }: BannerProps) => {
   const isBigScreen = useBreakpointValue({
     '2xl': true,
   });
@@ -9,7 +13,7 @@ export const Banner = () => {
     <Box
       w="100%"
       h={isBigScreen ? '500px' : '370px'}
-      background="url('/images/banner.png') no-repeat"
+      background={`url('${bgImage}') no-repeat`}
       bgSize="cover"
       bgPosition="center"
     />
