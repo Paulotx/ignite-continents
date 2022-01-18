@@ -1,10 +1,42 @@
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-
-import { Box, Flex, Heading, Icon, Stack, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 import { Banner } from '../components/Banner';
 import { Header } from '../components/Header';
+import { Slide } from '../components/Slide';
 import { TravelTypes } from '../components/TravelTypes';
+
+const continents = [
+  {
+    name: 'América',
+    description: 'O continente mais top.',
+    image: '/images/america.png',
+  },
+  {
+    name: 'Africa',
+    description: 'O berço da humanidade.',
+    image: '/images/africa.png',
+  },
+  {
+    name: 'Europa',
+    description: 'O continente mais antigo.',
+    image: '/images/europa.png',
+  },
+  {
+    name: 'Oceania',
+    description: 'O continente mais bonito.',
+    image: '/images/oceania.png',
+  },
+  {
+    name: 'Asia',
+    description: 'O continente com mais doidos.',
+    image: '/images/asia.png',
+  },
+  {
+    name: 'Antártida',
+    description: 'O continente gelado.',
+    image: '/images/antartida.png',
+  },
+];
 
 export default function Home() {
   return (
@@ -24,42 +56,7 @@ export default function Home() {
         </Text>
       </Box>
 
-      <Flex
-        maxW="1240px"
-        w="100%"
-        h="450px"
-        background="url(images/europa.png) no-repeat"
-        backgroundSize="cover"
-        backgroundPosition="center"
-        mx="auto"
-        my="50px"
-        align="center"
-        justify="center"
-        position="relative"
-      >
-        <Flex align="center" justify="space-between" w="100%" px="8">
-          <Icon as={BsChevronLeft} fontSize="40" color="yellow.500" />
-
-          <Flex direction="column" align="center">
-            <Heading as="h2" color="white" fontSize="5xl">
-              Europa
-            </Heading>
-            <Text color="white" fontSize="xl" mt="4" fontWeight="600">
-              O continente mais antigo.
-            </Text>
-          </Flex>
-
-          <Icon as={BsChevronRight} fontSize="40" color="yellow.500" />
-        </Flex>
-        <Stack direction="row" spacing="4" position="absolute" bottom="6">
-          <Box w="4" h="4" br="50%" bg="yellow.500" borderRadius="full" />
-          <Box w="4" h="4" br="50%" bg="gray.400" borderRadius="full" />
-          <Box w="4" h="4" br="50%" bg="gray.400" borderRadius="full" />
-          <Box w="4" h="4" br="50%" bg="gray.400" borderRadius="full" />
-          <Box w="4" h="4" br="50%" bg="gray.400" borderRadius="full" />
-          <Box w="4" h="4" br="50%" bg="gray.400" borderRadius="full" />
-        </Stack>
-      </Flex>
+      <Slide continents={continents} />
     </>
   );
 }

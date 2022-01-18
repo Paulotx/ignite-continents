@@ -6,6 +6,7 @@ interface BannerProps {
 
 export const Banner = ({ bgImage }: BannerProps) => {
   const isBigScreen = useBreakpointValue({
+    xl: false,
     '2xl': true,
   });
 
