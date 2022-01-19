@@ -9,7 +9,7 @@ import { ContinentText } from './ContinentText';
 interface Continent {
   name: string;
   description: string;
-  image: string;
+  slide_image: string;
 }
 
 interface SlideProps {
@@ -36,7 +36,7 @@ export const Slide = ({ continents }: SlideProps) => {
       maxW="1240px"
       w="100%"
       h="450px"
-      background={`url(${continents[index].image}) no-repeat`}
+      background={`url(${continents[index].slide_image}) no-repeat`}
       backgroundSize="cover"
       backgroundPosition="center"
       mx="auto"

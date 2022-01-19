@@ -1,22 +1,49 @@
-import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
 
-interface BannerProps {
-  bgImage: string;
-}
-
-export const Banner = ({ bgImage }: BannerProps) => {
-  const isBigScreen = useBreakpointValue({
-    xl: false,
-    '2xl': true,
-  });
-
+export const Banner = () => {
   return (
     <Box
       w="100%"
-      h={isBigScreen ? '500px' : '370px'}
-      background={`url('${bgImage}') no-repeat`}
+      h={['163px', '250px', '250px', '370px']}
+      background="url('/images/banner-background.png') no-repeat"
       bgSize="cover"
       bgPosition="center"
-    />
+    >
+      <Flex
+        justify={['center', 'space-between']}
+        px={['4', '10', '15', '20', '40']}
+        h="100%"
+        mx="auto"
+        align="center"
+      >
+        <Box>
+          <Heading
+            color="white"
+            fontWeight="600"
+            lineHeight="54px"
+            fontSize={['xl', '2xl', '2xl', '2xl', '4xl']}
+          >
+            6 Continentes,
+            <br /> infinitas possibilidades
+          </Heading>
+          <Text
+            color="gray.300"
+            mt="5"
+            fontSize={['0.8rem', 'xl']}
+            maxW={['100%', '100%', '100%', '550px']}
+          >
+            Chegou a hora de tirar do papel a viagem que você sempre sonhou
+          </Text>
+        </Box>
+        <Image
+          src="/images/airplane.svg"
+          w={['300px', '300px', '300px', '430px']}
+          display={['none', 'none', 'block']}
+          alt="Avião amarelo voando com algumas nuvens ao redor."
+          transform="translateY(68px)"
+          ml="8"
+        />
+      </Flex>
+    </Box>
   );
 };

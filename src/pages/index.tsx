@@ -9,32 +9,32 @@ const continents = [
   {
     name: 'América',
     description: 'O continente mais top.',
-    image: '/images/america.png',
+    slide_image: '/images/america.png',
   },
   {
     name: 'Africa',
     description: 'O berço da humanidade.',
-    image: '/images/africa.png',
+    slide_image: '/images/africa.png',
   },
   {
     name: 'Europa',
     description: 'O continente mais antigo.',
-    image: '/images/europa.png',
+    slide_image: '/images/europa.png',
   },
   {
     name: 'Oceania',
     description: 'O continente mais bonito.',
-    image: '/images/oceania.png',
+    slide_image: '/images/oceania.png',
   },
   {
     name: 'Asia',
     description: 'O continente com mais doidos.',
-    image: '/images/asia.png',
+    slide_image: '/images/asia.png',
   },
   {
     name: 'Antártida',
     description: 'O continente gelado.',
-    image: '/images/antartida.png',
+    slide_image: '/images/antartida.png',
   },
 ];
 
@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <Header />
 
-      <Banner bgImage="/images/banner.png" />
+      <Banner />
 
       <TravelTypes />
 
