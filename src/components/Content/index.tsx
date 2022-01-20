@@ -3,22 +3,28 @@ import { Flex, FlexProps } from '@chakra-ui/react';
 import { Curiosity } from './Curiosity';
 import { Information } from './Information';
 
-type ContentProps = FlexProps;
+interface ContentProps extends FlexProps {
+  content: {
+    information: string;
+    curiosities: {
+      countryNumber: number;
+      languageNumber: number;
+      plus100Number: number;
+    };
+  };
+}
 
-export const Content = ({ ...rest }: ContentProps) => {
+export const Content = ({ content, ...rest }: ContentProps) => {
+  const { information, curiosities } = content;
+
   return (
     <Flex maxW="1240px" mx="auto" align="center" px="1rem" {...rest}>
-      <Information>
-        A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a
-        península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela
-        divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar
-        Negro a sudeste.
-      </Information>
+      <Information>{information}</Information>
 
       <Flex flex="1" maxW="500" align="center" justify="space-evenly">
-        <Curiosity heading="50" text="países" />
-        <Curiosity heading="60" text="línguas" />
-        <Curiosity heading="27" text="cidades + 100" />
+        <Curiosity heading={curiosities.countryNumber} text="países" />
+        <Curiosity heading={curiosities.languageNumber} text="línguas" />
+        <Curiosity heading={curiosities.plus100Number} text="cidades + 100" />
       </Flex>
     </Flex>
   );

@@ -1,7 +1,7 @@
 import { Flex, Heading, Text } from '@chakra-ui/react';
 
 interface CuriosityProps {
-  heading: string;
+  heading: number;
   text: string;
 }
 
