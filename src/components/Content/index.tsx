@@ -1,4 +1,4 @@
-import { Flex, FlexProps } from '@chakra-ui/react';
+import { Flex, FlexProps, Icon } from '@chakra-ui/react';
 
 import { Curiosity } from './Curiosity';
 import { Information } from './Information';
@@ -42,7 +42,7 @@ export const Content = ({ content, ...rest }: ContentProps) => {
       >
         <Curiosity heading={curiosities.countryNumber} text="países" />
         <Curiosity heading={curiosities.languageNumber} text="línguas" />
-        <Curiosity heading={curiosities.plus100Number} text="cidades + 100" />
+        <Curiosity heading={curiosities.plus100Number} text="cidades + 100" haveInfo />
       </Flex>
     </Flex>
   );
