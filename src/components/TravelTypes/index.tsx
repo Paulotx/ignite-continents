@@ -11,6 +11,7 @@ export const TravelTypes = () => {
       minChildWidth="160px"
       mx="auto"
       mt="20"
+      gap="10"
     >
       <TravelType src="/images/cocktail.svg" alt="Night Life" title="vida noturna" />
       <TravelType src="/images/surf.svg" alt="Surf" title="praia" />

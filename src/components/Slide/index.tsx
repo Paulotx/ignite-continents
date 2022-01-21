@@ -1,12 +1,15 @@
+import Link from 'next/link';
+
 import { useState } from 'react';
 
-import { Flex, Stack } from '@chakra-ui/react';
+import { Flex, Stack, Link as ChakraLink } from '@chakra-ui/react';
 
 import { Pagination } from '../Pagination';
 import { Chevron } from './Chevron';
 import { ContinentText } from './ContinentText';
 
 interface Continent {
+  slug: string;
   name: string;
   description: string;
   slide_image: string;
@@ -48,17 +51,22 @@ export const Slide = ({ continents }: SlideProps) => {
       <Flex align="center" justify="space-between" w="100%" px="8">
         <Chevron direction="left" handleClick={handlePrev} />
 
-        <ContinentText
-          title={continents[index].name}
-          description={continents[index].description}
-        />
+        <Link href={`/continent/${continents[index].slug}`}>
+          <ChakraLink _hover={{ textDecoration: 'none' }}>
+            <ContinentText
+              title={continents[index].name}
+              description={continents[index].description}
+            />
+          </ChakraLink>
+        </Link>
 
         <Chevron direction="right" handleClick={handleNext} />
       </Flex>
 
       <Stack direction="row" spacing="4" position="absolute" bottom="6">
-        {continents.map((_, continentIndex) => (
+        {continents.map((continent, continentIndex) => (
           <Pagination
+            key={continent.name}
             isCurrent={continentIndex === index}
             onClick={() => handleSetIndex(continentIndex)}
           />

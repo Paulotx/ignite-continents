@@ -1,10 +1,39 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import { Flex, Image, Link as ChakraLink } from '@chakra-ui/react';
+import { BsChevronLeft } from 'react-icons/bs';
+
+import { Flex, Icon, Image, Link as ChakraLink } from '@chakra-ui/react';
 
 export const Header = () => {
+  const { asPath } = useRouter();
+
   return (
-    <Flex align="center" justify="center" w="100%" h="100px">
+    <Flex
+      align="center"
+      justify="center"
+      maxW="1240px"
+      h="100px"
+      mx="auto"
+      position="relative"
+    >
+      {asPath !== '/' && (
+        <Link href="/">
+          <ChakraLink>
+            <Icon
+              as={BsChevronLeft}
+              fontSize="30"
+              color="gray.500"
+              cursor="pointer"
+              position="absolute"
+              display="block"
+              top="40%"
+              left="0"
+            />
+          </ChakraLink>
+        </Link>
+      )}
+
       <Link href="/">
         <ChakraLink>
           <Image src="/images/logo.svg" alt="Logo" />

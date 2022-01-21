@@ -21,6 +21,7 @@ export const Cities = ({ cities, ...rest }: CitiesProps) => {
       <SimpleGrid flex="1" gap="10" mt="10" minChildWidth="260px" align="flex-start">
         {cities.map((city) => (
           <City
+            key={city.city}
             city={city.city}
             country={city.country}
             image={city.image}

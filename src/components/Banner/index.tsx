@@ -20,8 +20,9 @@ export const Banner = () => {
           <Heading
             color="white"
             fontWeight="600"
-            lineHeight="54px"
-            fontSize={['xl', '2xl', '2xl', '2xl', '4xl']}
+            lineHeight={{ base: '34px', sm: '34px', md: '44px', lg: '54px' }}
+            fontSize={['xl', '2xl', '2xl', '3xl', '4xl']}
+            textAlign={{ base: 'center', md: 'left' }}
           >
             6 Continentes,
             <br /> infinitas possibilidades
@@ -31,6 +32,7 @@ export const Banner = () => {
             mt="5"
             fontSize={['0.8rem', 'xl']}
             maxW={['100%', '100%', '100%', '550px']}
+            textAlign={{ base: 'center', md: 'left' }}
           >
             Chegou a hora de tirar do papel a viagem que você sempre sonhou
           </Text>

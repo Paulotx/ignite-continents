@@ -139,7 +139,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           city: 'Cancun',
           country: 'Mexico',
           image: '/images/cancun.png',
-          flag: '/images/flags/maxico.png',
+          flag: '/images/flags/mexico.png',
         },
       ],
     },
